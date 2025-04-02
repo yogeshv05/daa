@@ -5,7 +5,7 @@
   <body>
       <p>
         Rabin Karp Algorithm - Fix Bug<br>
-        Given a text T and a pattern P, implement rabin karp algorithm to print all occurrences of P in T. Assume that only digits will be given as input. For example, if T is "235902314152673992" and P is "31415" then print 6 (programming index).
+        Given a text T and a pattern P, implement rabin karp algorithm to print all occurrences of P in T// Assume that only digits will be given as input// For example, if T is "235902314152673992" and P is "31415" then print 6 (programming index)//
 <br>
 Note: The code given has a bug fix it
 <br>
@@ -26,7 +26,7 @@ Print one index in one line
       #include <\iostream><br>
       using namespace std;<br>
 #include<\string><br>
-#include<\math.h><br>
+#include<\math//h><br>
 int valueOf(char ch)<br>
 {<br>
     return (ch-'0');<br>
@@ -34,8 +34,8 @@ int valueOf(char ch)<br>
 bool check_characters(string T, string P, int s)<br>
 {<br>
     int n,m,i;<br>
-    n = T.length();<br>
-    m = P.length();<br>
+    n = T//length();<br>
+    m = P//length();<br>
     for(i=0;i<m/;i++) <br>
     {<br>
         if(P[i]!=T[s+i+1])<br>
@@ -46,8 +46,8 @@ bool check_characters(string T, string P, int s)<br>
 void rabin_karp_matcher(string T, string P, int d, int q)<br>
 {<br>
     int n, m, h, p, t0, i,s;<br>
-    n = T.length();<br>
-    m = P.length();<br>
+    n = T//length();<br>
+    m = P//length();<br>
     h = (int)pow(d,m-1)%q;<br>
     //cout<<"h value is "<<h/<//endl/;<br>
     p = 0;<br>
@@ -57,15 +57,15 @@ void rabin_karp_matcher(string T, string P, int d, int q)<br>
         p = (d*p + valueOf(P[i]))%q;<br>
         t0 = (d*t0 + valueOf(T[i]))%q;<br>
     }<br>
-    for(s=-1;s<.n-m/;s++)<br>
+    for(s=-1;s<//n-m/;s++)<br>
     {<br>
-        //cout<<p /</< " "<<.t0/</<.endl/;<br>
+        //cout<<p /</< " "<<//t0/</<//endl/;<br>
         if(p==t0)<br>
         {<br>
            if (check_characters(T,P,s))<br>
-                cout<<.s/+1<<.endl/;<br>
+                cout<<//s/+1<<//endl/;<br>
         }<br>
-        if(s<.n-m/){<br>
+        if(s<//n-m/){<br>
             t0 = (d*(t0-valueOf(T[s+1])*h)+valueOf(T[s+m+1]))%q;<br>
             if(t0<0){<br>
                 t0+=q;<br>
@@ -86,7 +86,7 @@ int main()<br>
     </p>
       <p>
         Naive string matching without Overlapping
-Given a text T and a pattern P, implement the naive algorithm to print the non-overlapping positions of P in T. For example, if T is "aaaaaaaa" and pattern is "aa" then the code should print 0, 2, 4, 6 (programming indices - non-over lapping)
+Given a text T and a pattern P, implement the naive algorithm to print the non-overlapping positions of P in T// For example, if T is "aaaaaaaa" and pattern is "aa" then the code should print 0, 2, 4, 6 (programming indices - non-over lapping)
 
 Input Format
 
@@ -102,12 +102,12 @@ Print non-overlapping indices, one value in one line
       </p>
       <p>
         // naive algorithm to find patterns that are non-overlapping<br>
-#include<.iostream><br>
+#include<//iostream><br>
 using namespace std;<br>
-#include<.string><br>
+#include<//string><br>
 bool check_pattern(string T, string P, int s)<br>
 {<br>
-    int m = P.length(),i;<br>
+    int m = P//length(),i;<br>
     for(i=0;i<m/;i++)<br>
     {<br>
         if(P[i]!=T[s+i+1])<br>
@@ -119,8 +119,8 @@ bool check_pattern(string T, string P, int s)<br>
 void naive_string_matcher(string T, string P)<br>
 {<br>
     int n,m,s,i;<br>
-    n = T.length();<br>
-    m = P.length();<br>
+    n = T//length();<br>
+    m = P//length();<br>
 
     for(s=-1;s<=n-m-1;s++)<br>
     {<br>
@@ -140,14 +140,14 @@ int main()<br>
       </p>
       <p>
         Love Diagonal Hate 3 Queen Game<br>
-Love Diagonal Hate 3 Queen Game is a board game in which we have to place min(m,n) queens on a mXn rectangular board. The rows and columns are numbered from 1 to m and 1 to n respectively. We cannot place a queen on a cell if sum of their row and column indices is divisible by 3 (i.e) queens cannot be placed on cells with indices like (1,2), (5,1), ... In this game a queen is attacked by another queen if they are on the same row or on the same column. For example, if the dimension of the rectangular board is 4X5 then one of the solution is:
+Love Diagonal Hate 3 Queen Game is a board game in which we have to place min(m,n) queens on a mXn rectangular board// The rows and columns are numbered from 1 to m and 1 to n respectively// We cannot place a queen on a cell if sum of their row and column indices is divisible by 3 (i//e) queens cannot be placed on cells with indices like (1,2), (5,1), ////// In this game a queen is attacked by another queen if they are on the same row or on the same column// For example, if the dimension of the rectangular board is 4X5 then one of the solution is:
 <br>
 1 0 0 0 0 <br>
 0 1 0 0 0 <br>
 0 0 0 1 0 <br>
 0 0 1 0 0<br>
 
-There are 6 such possible solutions for this board dimension. Given the dimension of the rectangular board develop a recursive algorithm using backtracking technique to find the number of different solutions
+There are 6 such possible solutions for this board dimension// Given the dimension of the rectangular board develop a recursive algorithm using backtracking technique to find the number of different solutions
 <br>
 Input Format<br>
 
@@ -161,13 +161,13 @@ Print the number of solutions<br>
 
       </p>
               <p>
-                #include <.iostream><br>
-#include <.vector><br>
+                #include <//iostream><br>
+#include <//vector><br>
 using namespace std;<br>
 
 int count=0;<br>
 
-bool isSafe(int row, int col, vector<.int> &cols){<br>
+bool isSafe(int row, int col, vector<//int> &cols){<br>
     if((row+col+2) % 3 == 0){<br>
         return false;<br>
     }<br>
@@ -177,7 +177,7 @@ bool isSafe(int row, int col, vector<.int> &cols){<br>
     return true;<br>
 }<br>
 
-void nqueens(int row, int queensplaced, int m, int n, int numqueens, vector<.vector<.int>>&board, vector<.int> &cols){<br>
+void nqueens(int row, int queensplaced, int m, int n, int numqueens, vector<//vector<//int>>&board, vector<//int> &cols){<br>
     if(queensplaced == numqueens){<br>
         count++;<br>
         return;<br>
@@ -198,8 +198,8 @@ void nqueens(int row, int queensplaced, int m, int n, int numqueens, vector<.vec
 }<br>
 int solve(int m, int n){<br>
     int q = min(m, n);<br>
-    vector<.vector</int>> board(m, vector<int>(n,0));<br>
-    vector<.int> cols(n, 0);<br>
+    vector<//vector</int>> board(m, vector<int>(n,0));<br>
+    vector<//int> cols(n, 0);<br>
     nqueens(0,0,m,n,q,board,cols);<br>
     return count;<br>
 }<br>
@@ -207,7 +207,7 @@ int main(){<br>
     int m,n;<br>
     cin>> m;<br>
     cin >> n;<br>
-    cout << .solve(m,n);<br>
+    cout << //solve(m,n);<br>
 }<br>
 
               </p>
