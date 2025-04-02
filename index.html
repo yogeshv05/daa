@@ -2,7 +2,7 @@
   <head>
       <title> String Matching Rabin Karp </title>
   </head>
-  <body style="background-color: lightgreen;">
+  <body>
       <h2> Rabin Karp Algorithm - Fix Bug </h2>
       <p> Given a text T and a pattern P, implement the Rabin-Karp algorithm to print all occurrences of P in T. Assume that only digits will be given as input. For example, if T is "235902314152673992" and P is "31415", then print the indices of occurrences (programming index). </p>
       <p> Note: The code given has a bug, fix it. </p>
@@ -21,10 +21,10 @@
 
       <h3> Code: </h3>
       <pre>
-#include <iostream>
+#include |iostream>
 using namespace std;
-#include <string>
-#include <cmath>
+#include |string>
+#include |cmath>
 
 int valueOf(char ch) {
     return (ch - '0');
@@ -93,9 +93,9 @@ int main() {
 
       <h3> Code: </h3>
       <pre>
-#include<iostream>
+#include|iostream>
 using namespace std;
-#include<string>
+#include|string>
 
 bool check_pattern(string T, string P, int s) {
     int m = P.length();
@@ -142,8 +142,8 @@ int main() {
 
       <h3> Code: </h3>
       <pre>
-#include <iostream>
-#include <vector>
+#include |iostream>
+#include |vector>
 using namespace std;
 
 int count = 0;
