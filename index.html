@@ -286,5 +286,63 @@ int main() {
 }
 </code></pre>
 
+      <br>
+      <br>
+      <pre><code>
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+#include &lt;math.h&gt;
+using namespace std;
+
+int valueOf(char a){
+    return a-'0';
+}
+
+bool check(string p, string t, int s){
+    for(int i=0; i&lt;p.length(); i++){
+        if(p[i] != t[s+i]){
+            return false;
+        }
+    }
+    return true;
+}
+
+void rabinkarp(string T, string P, int d, int q){
+    int n = T.length();
+    int m = P.length();
+    int p=0;
+    int t0=0;
+    int h = (int)pow(d, m-1)%q;
+    for(int i=0; i&lt;m; i++){
+        p = (d*p + P[i])%q;
+        t0 = (d*t0 + T[i])%q;
+    }
+    for(int i=0; i&lt;n-m; i++){
+        if(p==t0){
+            if(check(P,T,i)){
+                cout &lt;&lt; "Pattern found at index "<<i+1&lt;&lt;endl;
+            }
+            else{
+                cout &lt;&lt; "Spurious hit" &lt;&lt; endl;
+            }
+        }
+        if(i&lt;n-m){
+            t0 = (d*(t0-T[i]*h) + T[i+m]*h);
+            if(t0 &lt; 0){
+                t0+=q;
+            }
+        }
+    }
+}
+
+int main()
+{
+    string t = "ABCCDDABDEEFCDDG";
+    string s = "CDD";
+    int q = 13;
+    int d = 1;
+    rabinkarp(t,s,d,q);
+}
+</code></pre>
   </body>
 </html>
